@@ -57,14 +57,9 @@ service cloud.firestore {
 - Kopiera allt som finns inuti firebaseConfig-variablen
 - Klistra in i firebaseConfig.js
 
-I filhanteraren:
+### Github
 
-- Skapa en ny mapp med namnet wishlist-förnamnförnamn i filip/Dev/Önskelistor
-- Kopiera över
-
-I GitHub:
-
-- Skapa ett nytt repo och ge det namnet wishlist-förnamnförnamn
+- Skapa ett nytt repo och ge det namnet onskelista-förnamnförnamn
 - Välj Private
 
 I store.js:
