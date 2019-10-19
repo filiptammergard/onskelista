@@ -110,16 +110,29 @@ export default new Vuex.Store({
         .orderBy("order")
         .get()
         .then(querySnapshot => {
-          db.collection("wishes")
-            .add({
-              item: wish.item,
-              amount: Number(wish.amount),
-              specification: wish.specification,
-              link: wish.link,
-              order: querySnapshot.docs[querySnapshot.docs.length - 1].data().order + 1,
-              given: 0
-            })
-            .then(router.push({ name: "home" }));
+          if (querySnapshot.docs.length) {
+            db.collection("wishes")
+              .add({
+                item: wish.item,
+                amount: Number(wish.amount),
+                specification: wish.specification,
+                link: wish.link,
+                order: querySnapshot.docs[querySnapshot.docs.length - 1].data().order + 1,
+                given: 0
+              })
+              .then(router.push({ name: "home" }));
+          } else {
+            db.collection("wishes")
+              .add({
+                item: wish.item,
+                amount: Number(wish.amount),
+                specification: wish.specification,
+                link: wish.link,
+                order: 0,
+                given: 0
+              })
+              .then(router.push({ name: "home" }));
+          }
         });
     },
     async editWish(context, wish) {
