@@ -1,0 +1,116 @@
+@import "settings";
+
+html,
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+h1 {
+  font-family: "Stalemate", cursive;
+  font-size: 3rem;
+}
+h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+a {
+  color: $primary-color;
+}
+a:hover {
+  color: $primary-color;
+  text-decoration: underline;
+}
+.btn {
+  margin: 0 0.25rem;
+}
+.btn-primary.btn-custom {
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+.btn-primary.btn-custom:hover {
+  background-color: darken($primary-color, 10);
+  border-color: darken($primary-color, 10);
+}
+.btn-primary.btn-custom:active {
+  background-color: darken($primary-color, 10) !important;
+  border-color: darken($primary-color, 10) !important;
+}
+.btn-custom:disabled {
+  background-color: $secondary-color;
+  border-color: $secondary-color;
+  opacity: 0.8;
+  pointer-events: none;
+}
+.alert-custom {
+  background-color: $secondary-color;
+  border-color: darken($secondary-color, 10);
+  color: black;
+}
+.bg-custom {
+  background-color: $primary-color;
+}
+.badge-primary.badge-custom {
+  background-color: $primary-color;
+  color: white;
+  font-size: 1rem;
+
+  &.disabled {
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+    opacity: 0.8;
+  }
+}
+.badge-secondary.badge-custom {
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+
+  &.disabled {
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+    opacity: 0.8;
+  }
+}
+.disabled {
+  color: $secondary-color;
+  opacity: 0.8;
+}
+.hide {
+  display: none;
+}
+.material-icons {
+  color: $primary-color;
+
+  &.disabled {
+    color: $secondary-color;
+    opacity: 0.8;
+  }
+}
+.container-fixed-centered {
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.opacity-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0);
+  @include ease-out();
+
+  &.show {
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+  }
+}
+tbody tr:hover:not(.disabled) {
+  background-color: $secondary-color;
+  @include ease-out();
+}
