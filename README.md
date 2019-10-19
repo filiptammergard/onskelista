@@ -81,12 +81,10 @@ service cloud.firestore {
 - Gå till src/components/firebaseConfig.js
 - Klistra in innehållet i firebaseConfig i firebaseConfig-objektet
 - Gå till src/store.js
-- Ändra adminPassword & guestPassword beroende på lösenorden som angavs i Firebase
-- Ändra man och woman beroende på brudparets namn
-
-I \_settings.scss:
-
-- Ändra $primary-color och $secondary-color beroende på brudparets önskemål
+- Ändra adminPassword & guestPassword beroende på lösenorden som angavs i Firebase Authentication
+- Ändra firstPerson & secondPerson beroende på brudparets namn
+- Gå till src/assets/\_settings.scss
+- Ändra \$primary-color och beroende på brudparets önskemål
 
 ## Project setup
 
