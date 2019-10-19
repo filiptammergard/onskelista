@@ -4,7 +4,7 @@
       <div class="container">
         <span
           class="badge badge-pill badge-secondary badge-custom"
-        >{{ man }} &amp; {{ woman }}s önskelista</span>
+        >{{ firstPerson }} &amp; {{ secondPerson }}s önskelista</span>
 
         <div class="navbar-nav">
           <router-link
@@ -38,7 +38,7 @@ import { mapState, mapActions } from "vuex";
 
 export default {
   computed: {
-    ...mapState(["isLoggedIn", "isAdmin", "man", "woman"])
+    ...mapState(["isLoggedIn", "isAdmin", "firstPerson", "secondPerson"])
   },
   methods: {
     ...mapActions(["logout"]),

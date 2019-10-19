@@ -7,7 +7,7 @@
       </article>
       <article v-else-if="isLoggedIn" class="alert alert-primary alert-custom shadow">
         <h1>Kära bröllopsgäst</h1>
-        <p>På den här sidan kan du boka något du vill ge till {{ man }} &amp; {{ woman }} i bröllopspresent, så att risken för dubletter minskar.</p>
+        <p>På den här sidan kan du boka något du vill ge till {{ firstPerson }} &amp; {{ secondPerson }} i bröllopspresent, så att risken för dubletter minskar.</p>
         <p>
           Om du råkar boka fel önskesak eller om du stöter på något problem kan du höra av dig till
           <strong>
@@ -23,8 +23,8 @@
           <tr>
             <th v-if="isAdmin">Antal önskade</th>
             <th v-else>Antal kvar</th>
-            <th>Sak</th>
-            <th>Specifikation</th>
+            <th style="min-width:10rem;">Sak</th>
+            <th style="min-width:10rem;">Specifikation</th>
             <th>Länk</th>
             <th></th>
           </tr>
@@ -89,8 +89,8 @@
 
     <div class="opacity-overlay" :class="{ show: confirm }" @click="bookedFalse(); confirm=false"></div>
 
-    <div class="container container-fixed-centered">
-      <div class="card text-center shadow" :class="{ hide: !confirm }">
+    <div class="container container-fixed-centered" :class="{ hide: !confirm }">
+      <div class="card text-center shadow">
         <h1 class="card-header">{{ wish.item }}</h1>
         <div class="card-body" v-if="!booked">
           <p>
@@ -176,7 +176,13 @@ export default {
     };
   },
   computed: {
-    ...mapState(["isLoggedIn", "isAdmin", "booked", "man", "woman"]),
+    ...mapState([
+      "isLoggedIn",
+      "isAdmin",
+      "booked",
+      "firstPerson",
+      "secondPerson"
+    ]),
     wishes: {
       get() {
         return this.$store.state.wishes;

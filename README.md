@@ -2,6 +2,30 @@
 
 ## Steg att följa
 
+### Firebase
+
+- Gå in i Console i Firebase: https://console.firebase.google.com/u/0/
+- Klicka på Add project
+- Ge projektet namnet onskelista-förnamnförnamn
+- Skapa projektet
+
+- Gå till Database
+- Klicka på Create database
+-
+
+```
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if request.auth.uid != null;
+    }
+  }
+}
+```
+
+- Skapa en collection med namnet "wishes" i Database-fliken
+- Skapa användare "admin@wishlist.com" och "guest@wishlist.com" i Authentication-fliken, ge dessa lösenord enligt önskemål från brudparet
+
 I filhanteraren:
 
 - Skapa en ny mapp med namnet wishlist-förnamnförnamn i filip/Dev/Önskelistor
@@ -11,12 +35,6 @@ I GitHub:
 
 - Skapa ett nytt repo och ge det namnet wishlist-förnamnförnamn
 - Välj Private
-
-I Firebase:
-
-- Start ett nytt projekt och ge det namnet wishlist-förnamnförnamn
-- Skapa en collection med namnet "wishes" i Database-fliken
-- Skapa användare "admin@wishlist.com" och "guest@wishlist.com" i Authentication-fliken, ge dessa lösenord enligt önskemål från brudparet
 
 I store.js:
 
