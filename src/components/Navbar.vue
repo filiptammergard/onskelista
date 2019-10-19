@@ -49,7 +49,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 nav {
   overflow-x: auto;
 }
@@ -61,7 +61,7 @@ nav {
 }
 @media (min-width: 576px) {
   .badge-custom {
-    display: block;
+    display: inline-block;
   }
 }
 </style>

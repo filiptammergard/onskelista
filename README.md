@@ -1,6 +1,16 @@
 # Önskelista demo
 
-## Att ändra
+## Steg att följa
+
+I filhanteraren:
+
+- Skapa en ny mapp med namnet wishlist-förnamnförnamn i filip/Dev/Önskelistor
+- Kopiera över
+
+I GitHub:
+
+- Skapa ett nytt repo och ge det namnet wishlist-förnamnförnamn
+- Välj Private
 
 I Firebase:
 
