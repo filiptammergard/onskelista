@@ -1,10 +1,10 @@
 export default {
-  apiKey: "AIzaSyDsIZGR8glk1B7pBHyDOKb6CPp3Ap7uk-Q",
-  authDomain: "onskelista-demo.firebaseapp.com",
-  databaseURL: "https://onskelista-demo.firebaseio.com",
-  projectId: "onskelista-demo",
-  storageBucket: "onskelista-demo.appspot.com",
-  messagingSenderId: "875088672651",
-  appId: "1:875088672651:web:6cfda2fa3daff19802a18e",
-  measurementId: "G-65WBYVP5K0"
+  apiKey: "AIzaSyBg2dg1qDRGrBsWykA4eI_18wus_gRkZ9s",
+  authDomain: "onskelista-filipida.firebaseapp.com",
+  databaseURL: "https://onskelista-filipida.firebaseio.com",
+  projectId: "onskelista-filipida",
+  storageBucket: "onskelista-filipida.appspot.com",
+  messagingSenderId: "609150972657",
+  appId: "1:609150972657:web:3d3d7d95595c683d9def50",
+  measurementId: "G-YPTQK7EMZ3"
 };
