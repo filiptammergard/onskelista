@@ -4,9 +4,24 @@ Det här en utgångspunkt för en bröllopsönskelista.
 
 ## Steg att följa
 
-### Firebase
+Följ de här stegen när önskelistan ska användas för ett nytt brudpar.
 
-#### Projekt
+### I Visual Studio Code
+
+- Öppna mappen onskelista i Visual Studio Code
+- Gå till branch master:
+
+```
+git checkout master
+```
+
+- Skapa en ny branch med namnet förnamnförnamn och gå till branchen:
+
+```
+git checkout -b förnamnförnamn
+```
+
+### Firebase
 
 - Gå in i Console i Firebase: https://console.firebase.google.com/u/0/
 - Klicka på Add project
