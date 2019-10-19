@@ -6,7 +6,7 @@ Det här en utgångspunkt för en bröllopsönskelista.
 
 Följ de här stegen när önskelistan ska användas för ett nytt brudpar.
 
-### I Visual Studio Code
+### Visual Studio Code
 
 - Öppna mappen onskelista i Visual Studio Code
 - Gå till branch master:
@@ -26,25 +26,31 @@ git checkout -b förnamnförnamn
 - Gå in i Console i Firebase: https://console.firebase.google.com/u/0/
 - Klicka på Add project
 - Ge projektet namnet onskelista-förnamnförnamn
-- Skapa projektet
+- Klicka på Continue
+- Stäng av Google Analytics och klicka på Create project
+- Klicka på Continue
 
 #### Användare
 
 - Gå till Authentication
 - Klicka på Set up sign-in method
-- Klicka Enable på den övre radio-knappen
-- Klicka på Save
-- Klicka på Users
+- Klicka på Email/Password
+- Klicka Enable på den övre radio-knappen och klicka på Save
+- Gå till Users
 - Klicka på Add user
 - Skriv "admin@wishlist.com" i Email och lösenord enligt önskemål i Password
-- Klicka på Add user
 - Gör samma sak igen med "guest@wishlist.com" i Email och lösenord enligt önskemål i Password
 
 #### Databas
 
 - Gå till Database
 - Klicka på Create database
+- Välj Start in locked mode och klicka på Next
+- Välj "eur3 (europe-west) som Cloud Firestore location
+- Klicka på Done
+- Klicka på Start collection och ge den namnet "wishes"
 - Klicka på Next
+- Klicka på "Auto-ID" och sedan Save
 - Gå till Rules
 - Ta bort allt och klistra in följande:
 
@@ -60,67 +66,47 @@ service cloud.firestore {
 ```
 
 - Klicka på Publish
-- Gå till Data
-- Klicka på Start collection och ge den namnet "wishes"
-- Lägg till
 
-#### Firebase API
+#### API
 
 - Gå till Project Overview
 - Klicka på </>
 - Ge appen namnet onskelista-förnamnförnamn
+- Klicka inte i "Also set up Firebase Hosting for this app"
+- Klicka på Register app
 - Kopiera allt som finns inuti firebaseConfig-variablen
-- Klistra in i firebaseConfig.js
 
-I filhanteraren:
+### Visual Studio Code
 
-- Skapa en ny mapp med namnet wishlist-förnamnförnamn i filip/Dev/Önskelistor
-- Kopiera över
-
-I GitHub:
-
-- Skapa ett nytt repo och ge det namnet wishlist-förnamnförnamn
-- Välj Private
-
-I store.js:
-
-- Ändra adminPassword & guestPassword beroende på lösenorden som angavs i Firebase
-- Ändra man och woman beroende på brudparets namn
-
-I \_settings.scss:
-
-- Ändra $primary-color och $secondary-color beroende på brudparets önskemål
-
-## Project setup
+- Gå till src/components/firebaseConfig.js
+- Klistra in innehållet i firebaseConfig i firebaseConfig-objektet
+- Gå till src/store.js
+- Ändra adminPassword & guestPassword beroende på lösenorden som angavs i Firebase Authentication
+- Ändra firstPerson & secondPerson beroende på brudparets namn
+- Gå till src/assets/\_settings.scss
+- Ändra \$primary-color och beroende på brudparets önskemål
+- Pusha ändringarna:
 
 ```
-npm install
+git add .
+git commit -m "förnamnförnamn settings"
+git push --set-upstream origin förnamnförnamn
 ```
 
-### Compiles and hot-reloads for development
+### Netlify
 
-```
-npm run serve
-```
+- Gå in på Netlify: https://app.netlify.com/teams/filiptammergard/sites
+- Klicka på New site from Git
+- Under Continuous Deployment, klicka på GitHub
+- Logga in om det behövs
+- Klicka på filiptammergard/onskelista
+- På "Branch på deploy", välj förnamnförnamn
+- På "Build command", skriv "npm run build"
+- På "Publish directory", skriv "dist"
+- Klicka på Deploy site
+- Klicka på Domain settings
+- Längst till höger vid "Default subdomain", klicka på de tre prickarna och sedan på Edit site name
+- Ändra Site name till förnamnförnamn eller enligt brudparets önskemål
+- Klicka på Save
 
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Run your tests
-
-```
-npm run test
-```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Klart!
