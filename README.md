@@ -6,7 +6,7 @@ Det här en utgångspunkt för en bröllopsönskelista.
 
 Följ de här stegen när önskelistan ska användas för ett nytt brudpar.
 
-### I Visual Studio Code
+### Visual Studio Code
 
 - Öppna mappen onskelista i Visual Studio Code
 - Gå till branch master:
@@ -67,7 +67,7 @@ service cloud.firestore {
 
 - Klicka på Publish
 
-#### Firebase API
+#### API
 
 - Gå till Project Overview
 - Klicka på </>
@@ -76,7 +76,7 @@ service cloud.firestore {
 - Klicka på Register app
 - Kopiera allt som finns inuti firebaseConfig-variablen
 
-#### I Visual Studio Code
+### Visual Studio Code
 
 - Gå till src/components/firebaseConfig.js
 - Klistra in innehållet i firebaseConfig i firebaseConfig-objektet
@@ -92,3 +92,21 @@ git add .
 git commit -m "förnamnförnamn settings"
 git push --set-upstream origin förnamnförnamn
 ```
+
+### Netlify
+
+- Gå in på Netlify: https://app.netlify.com/teams/filiptammergard/sites
+- Klicka på New site from Git
+- Under Continuous Deployment, klicka på GitHub
+- Logga in om det behövs
+- Klicka på filiptammergard/onskelista
+- På "Branch på deploy", välj förnamnförnamn
+- På "Build command", skriv "npm run build"
+- På "Publish directory", skriv "dist"
+- Klicka på Deploy site
+- Klicka på Domain settings
+- Längst till höger vid "Default subdomain", klicka på de tre prickarna och sedan på Edit site name
+- Ändra Site name till förnamnförnamn eller enligt brudparets önskemål
+- Klicka på Save
+
+Klart!
