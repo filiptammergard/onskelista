@@ -1,13 +1,12 @@
 // TODO: Fill with correct config
 const firebaseConfig = {
-  // apiKey: "AIzaSyDsIZGR8glk1B7pBHyDOKb6CPp3Ap7uk-Q",
-  // authDomain: "onskelista-demo.firebaseapp.com",
-  // databaseURL: "https://onskelista-demo.firebaseio.com",
-  // projectId: "onskelista-demo",
-  // storageBucket: "onskelista-demo.appspot.com",
-  // messagingSenderId: "875088672651",
-  // appId: "1:875088672651:web:6cfda2fa3daff19802a18e",
-  // measurementId: "G-65WBYVP5K0"
+  apiKey: "AIzaSyBlqJ_MY-ViPGO2GPuRRz0lJbc_9kuATmU",
+  authDomain: "onskelista-nilsolga-3d092.firebaseapp.com",
+  databaseURL: "https://onskelista-nilsolga-3d092.firebaseio.com",
+  projectId: "onskelista-nilsolga-3d092",
+  storageBucket: "onskelista-nilsolga-3d092.appspot.com",
+  messagingSenderId: "1017941562218",
+  appId: "1:1017941562218:web:ad77aa1fba4a81ed1e0b13"
 };
 
 export default firebaseConfig;
