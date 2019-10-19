@@ -85,37 +85,10 @@ service cloud.firestore {
 - Ändra firstPerson & secondPerson beroende på brudparets namn
 - Gå till src/assets/\_settings.scss
 - Ändra \$primary-color och beroende på brudparets önskemål
-
-## Project setup
-
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
+- Pusha ändringarna:
 
 ```
-npm run serve
+git add .
+git commit -m "förnamnförnamn settings"
+git push --set-upstream origin förnamnförnamn
 ```
-
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Run your tests
-
-```
-npm run test
-```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
