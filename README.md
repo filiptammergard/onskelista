@@ -26,25 +26,31 @@ git checkout -b förnamnförnamn
 - Gå in i Console i Firebase: https://console.firebase.google.com/u/0/
 - Klicka på Add project
 - Ge projektet namnet onskelista-förnamnförnamn
-- Skapa projektet
+- Klicka på Continue
+- Stäng av Google Analytics och klicka på Create project
+- Klicka på Continue
 
 #### Användare
 
 - Gå till Authentication
 - Klicka på Set up sign-in method
-- Klicka Enable på den övre radio-knappen
-- Klicka på Save
-- Klicka på Users
+- Klicka på Email/Password
+- Klicka Enable på den övre radio-knappen och klicka på Save
+- Gå till Users
 - Klicka på Add user
 - Skriv "admin@wishlist.com" i Email och lösenord enligt önskemål i Password
-- Klicka på Add user
 - Gör samma sak igen med "guest@wishlist.com" i Email och lösenord enligt önskemål i Password
 
 #### Databas
 
 - Gå till Database
 - Klicka på Create database
+- Välj Start in locked mode och klicka på Next
+- Välj "eur3 (europe-west) som Cloud Firestore location
+- Klicka på Done
+- Klicka på Start collection och ge den namnet "wishes"
 - Klicka på Next
+- Klicka på "Auto-ID" och sedan Save
 - Gå till Rules
 - Ta bort allt och klistra in följande:
 
@@ -60,30 +66,21 @@ service cloud.firestore {
 ```
 
 - Klicka på Publish
-- Gå till Data
-- Klicka på Start collection och ge den namnet "wishes"
-- Lägg till
 
 #### Firebase API
 
 - Gå till Project Overview
 - Klicka på </>
 - Ge appen namnet onskelista-förnamnförnamn
+- Klicka inte i "Also set up Firebase Hosting for this app"
+- Klicka på Register app
 - Kopiera allt som finns inuti firebaseConfig-variablen
-- Klistra in i firebaseConfig.js
 
-I filhanteraren:
+#### I Visual Studio Code
 
-- Skapa en ny mapp med namnet wishlist-förnamnförnamn i filip/Dev/Önskelistor
-- Kopiera över
-
-I GitHub:
-
-- Skapa ett nytt repo och ge det namnet wishlist-förnamnförnamn
-- Välj Private
-
-I store.js:
-
+- Gå till src/components/firebaseConfig.js
+- Klistra in innehållet i firebaseConfig i firebaseConfig-objektet
+- Gå till src/store.js
 - Ändra adminPassword & guestPassword beroende på lösenorden som angavs i Firebase
 - Ändra man och woman beroende på brudparets namn
 
