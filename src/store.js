@@ -13,9 +13,8 @@ export default new Vuex.Store({
     adminPassword: "duochjagtammergard",
     guestPassword: "filida",
 
-    // TODO: Change firstPerson & secondPerosn depending on the names of the bridal couple
-    firstPerson: "Filip",
-    secondPerson: "Ida",
+    // TODO: Change adminWisher depending on the names of the wisher/s
+    adminWisher: "Filip & Ida",
 
     wishes: [],
     isLoggedIn: false,

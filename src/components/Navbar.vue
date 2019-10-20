@@ -2,9 +2,7 @@
   <div id="navbar" v-if="isAdmin || isLoggedIn">
     <nav class="navbar navbar-expand navbar-dark bg-custom shadow">
       <div class="container">
-        <span
-          class="badge badge-pill badge-secondary badge-custom"
-        >{{ firstPerson }} &amp; {{ secondPerson }}s önskelista</span>
+        <span class="badge badge-pill badge-secondary badge-custom">{{ adminWisher }}s önskelista</span>
 
         <div class="navbar-nav">
           <router-link
@@ -38,7 +36,7 @@ import { mapState, mapActions } from "vuex";
 
 export default {
   computed: {
-    ...mapState(["isLoggedIn", "isAdmin", "firstPerson", "secondPerson"])
+    ...mapState(["isLoggedIn", "isAdmin", "adminWisher"])
   },
   methods: {
     ...mapActions(["logout"]),

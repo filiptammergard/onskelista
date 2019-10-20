@@ -7,8 +7,8 @@
       </article>
       <article v-else-if="isLoggedIn" class="alert alert-primary alert-custom shadow">
         <h1>Önskelista</h1>
-        <p>På den här sidan har {{ firstPerson }} &amp; {{ secondPerson }} samlat vad de önskar sig.</p>
-        <p>Om du använder en mobil kanske inte hela önskelistan får plats på bredden, men då går det bra att dra i sidled för att få fram det som inte syns dirket.</p>
+        <p>På den här sidan har {{ adminWisher }} samlat vad de önskar sig.</p>
+        <p>Om du använder en mobil kanske inte hela önskelistan får plats på bredden, men då går det bra att dra med fingret i sidled för att få fram det som inte syns dirket.</p>
       </article>
     </div>
     <br />
@@ -171,13 +171,7 @@ export default {
     };
   },
   computed: {
-    ...mapState([
-      "isLoggedIn",
-      "isAdmin",
-      "booked",
-      "firstPerson",
-      "secondPerson"
-    ]),
+    ...mapState(["isLoggedIn", "isAdmin", "booked", "adminWisher"]),
     wishes: {
       get() {
         return this.$store.state.wishes;
