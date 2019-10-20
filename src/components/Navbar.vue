@@ -2,7 +2,9 @@
   <div id="navbar" v-if="isAdmin || isLoggedIn">
     <nav class="navbar navbar-expand navbar-dark bg-custom shadow">
       <div class="container">
-        <span class="badge badge-pill badge-secondary badge-custom">{{ adminWisher }}s önskelista</span>
+        <router-link :to="{ name: 'home' }">
+          <span class="badge badge-pill badge-secondary badge-custom">{{ adminWisher }}s önskelista</span>
+        </router-link>
 
         <div class="navbar-nav">
           <router-link
