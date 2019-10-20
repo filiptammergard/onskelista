@@ -7,7 +7,7 @@
       </article>
       <article v-else-if="isLoggedIn" class="alert alert-primary alert-custom shadow">
         <h1>Kära bröllopsgäst</h1>
-        <p>På den här sidan kan du boka något du vill ge till {{ firstPerson }} &amp; {{ secondPerson }} i bröllopspresent, så att risken för dubletter minskar.</p>
+        <p>På den här sidan kan du boka något du vill ge till {{ adminWisher }} i bröllopspresent, så att risken för dubletter minskar.</p>
         <p>
           Om du råkar boka fel önskesak eller om du stöter på något problem kan du höra av dig till
           <strong>
@@ -176,13 +176,7 @@ export default {
     };
   },
   computed: {
-    ...mapState([
-      "isLoggedIn",
-      "isAdmin",
-      "booked",
-      "firstPerson",
-      "secondPerson"
-    ]),
+    ...mapState(["isLoggedIn", "isAdmin", "booked", "adminWisher"]),
     wishes: {
       get() {
         return this.$store.state.wishes;

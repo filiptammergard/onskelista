@@ -8,7 +8,7 @@
             <strong>Hej och välkommen!</strong> Logga in för att få åtkomst till önskelistan.
           </p>
           <div class="card text-center shadow">
-            <h1 class="card-header">{{ firstPerson }} &amp; {{ secondPerson }}s önskelista</h1>
+            <h1 class="card-header">{{ adminWisher }}s önskelista</h1>
             <div class="card-body">
               <form @submit.prevent="login">
                 <div class="form-group">
@@ -44,12 +44,7 @@ export default {
     };
   },
   computed: {
-    ...mapState([
-      "adminPassword",
-      "guestPassword",
-      "firstPerson",
-      "secondPerson"
-    ]),
+    ...mapState(["adminPassword", "guestPassword", "adminWisher"]),
     email() {
       if (this.password == this.adminPassword) {
         return "admin@wishlist.com";

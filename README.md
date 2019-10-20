@@ -4,7 +4,7 @@ Det här en utgångspunkt för en bröllopsönskelista.
 
 ## Steg att följa
 
-Följ de här stegen när önskelistan ska användas för ett nytt brudpar.
+Följ de här stegen när önskelistan ska användas för en eller flera nya önskare.
 
 ### Visual Studio Code
 
@@ -82,9 +82,9 @@ service cloud.firestore {
 - Klistra in innehållet i firebaseConfig i firebaseConfig-objektet
 - Gå till src/store.js
 - Ändra adminPassword & guestPassword beroende på lösenorden som angavs i Firebase Authentication
-- Ändra firstPerson & secondPerson beroende på brudparets namn
+- Ändra adminWisher beroende på önskarens/önskarnas namn (exempelvis John & Jane)
 - Gå till src/assets/\_settings.scss
-- Ändra \$primary-color och beroende på brudparets önskemål
+- Ändra \$primary-color och beroende på önskarens/önskarnas önskemål
 - Pusha ändringarna:
 
 ```
@@ -106,7 +106,7 @@ git push --set-upstream origin förnamnförnamn
 - Klicka på Deploy site
 - Klicka på Domain settings
 - Längst till höger vid "Default subdomain", klicka på de tre prickarna och sedan på Edit site name
-- Ändra Site name till förnamnförnamn eller enligt brudparets önskemål
+- Ändra Site name till förnamnförnamn eller enligt önskarens/önskarnas önskemål
 - Klicka på Save
 
 Klart!
