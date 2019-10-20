@@ -37,7 +37,11 @@
               <div class="form-group">
                 <input v-model="wishData.link" type="text" class="form-control" placeholder="Länk" />
               </div>
-              <button type="submit" class="btn btn-primary btn-custom">Lägg till</button>
+              <button
+                :disabled="wishData.amount<0"
+                type="submit"
+                class="btn btn-primary btn-custom"
+              >Lägg till</button>
             </form>
           </div>
         </div>
