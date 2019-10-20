@@ -2,7 +2,7 @@
   <div id="wishlist">
     <div class="container">
       <article v-if="isAdmin" class="alert alert-primary alert-custom shadow">
-        <h1>Kära brudpar!</h1>
+        <h1>{{ adminWisher }}</h1>
         <p>Här kan ni lägga till nya önsketips och ändra eller ta bort nuvarande. Genom att dra och släppa önsketipsen i listan kan ni också ändra ordning på dem.</p>
       </article>
       <article v-else-if="isLoggedIn" class="alert alert-primary alert-custom shadow">
