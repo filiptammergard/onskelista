@@ -6,7 +6,7 @@
         <p>Här kan ni lägga till nya önsketips och ändra eller ta bort nuvarande. Genom att dra och släppa önsketipsen i listan kan ni också ändra ordning på dem.</p>
       </article>
       <article v-else-if="isLoggedIn" class="alert alert-primary alert-custom shadow">
-        <h1>Kära bröllopsgäst</h1>
+        <h1>Önskelista</h1>
         <p>På den här sidan kan du boka något du vill ge till {{ firstPerson }} &amp; {{ secondPerson }} i bröllopspresent, så att risken för dubletter minskar.</p>
         <p>
           Om du råkar boka fel önskesak eller om du stöter på något problem kan du höra av dig till

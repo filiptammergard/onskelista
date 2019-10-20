@@ -11,7 +11,7 @@ export default new Vuex.Store({
   state: {
     // TODO: Change adminPassword & guestPassword depending on settings in Firestore Auth
     adminPassword: "duochjagtammergard",
-    guestPassword: "guestguest",
+    guestPassword: "filida",
 
     // TODO: Change firstPerson & secondPerosn depending on the names of the bridal couple
     firstPerson: "Filip",
