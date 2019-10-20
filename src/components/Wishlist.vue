@@ -7,13 +7,8 @@
       </article>
       <article v-else-if="isLoggedIn" class="alert alert-primary alert-custom shadow">
         <h1>Önskelista</h1>
-        <p>På den här sidan kan du boka något du vill ge till {{ firstPerson }} &amp; {{ secondPerson }} i bröllopspresent, så att risken för dubletter minskar.</p>
-        <p>
-          Om du råkar boka fel önskesak eller om du stöter på något problem kan du höra av dig till
-          <strong>
-            <a target="_blank" href="https://tammergard.se/kontakt">Filip Tammergård</a>
-          </strong> som har skapat sidan så kan han hjälpa dig.
-        </p>
+        <p>På den här sidan har {{ firstPerson }} &amp; {{ secondPerson }} samlat vad de önskar sig.</p>
+        <p>Om du använder en mobil kanske inte hela önskelistan får plats på bredden, men då går det bra att dra i sidled för att få fram det som inte syns dirket.</p>
       </article>
     </div>
     <br />
