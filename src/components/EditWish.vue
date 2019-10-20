@@ -31,7 +31,7 @@
                 </div>
                 <input v-model="wishData.link" type="text" class="form-control" />
               </div>
-              <button type="submit" class="btn btn-primary btn-custom">Ändra</button>
+              <button :disabled="!validWish" type="submit" class="btn btn-primary btn-custom">Ändra</button>
               <button @click="deleteWish" class="btn btn-danger">Ta bort</button>
               <router-link :to="{ name: 'home' }" class="btn btn-secondary">Tillbaka</router-link>
             </form>
@@ -73,7 +73,18 @@ export default {
     }
   },
   computed: {
-    ...mapState(["wishes"])
+    ...mapState(["wishes"]),
+    validWish() {
+      if (
+        this.wishData.item != null &&
+        this.wishData.amount != null &&
+        this.wishData.amount > 0
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   },
   methods: {
     ...mapActions(["editWish", "deleteWish"])

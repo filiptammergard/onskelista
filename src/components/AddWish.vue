@@ -37,7 +37,11 @@
               <div class="form-group">
                 <input v-model="wishData.link" type="text" class="form-control" placeholder="Länk" />
               </div>
-              <button type="submit" class="btn btn-primary btn-custom">Lägg till</button>
+              <button
+                :disabled="!validWish"
+                type="submit"
+                class="btn btn-primary btn-custom"
+              >Lägg till</button>
             </form>
           </div>
         </div>
@@ -63,6 +67,19 @@ export default {
   },
   methods: {
     ...mapActions(["addWish"])
+  },
+  computed: {
+    validWish() {
+      if (
+        this.wishData.item != null &&
+        this.wishData.amount != null &&
+        this.wishData.amount > 0
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   }
 };
 </script>
