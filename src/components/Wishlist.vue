@@ -53,10 +53,11 @@
             :class="{ disabled: wish.amount-wish.given==0 }"
           >
             <td>
-              <span
+              <span v-if="wish.amount>0"
                 class="badge badge-pill badge-primary badge-custom"
                 :class="{ disabled: wish.amount-wish.given==0 }"
               >{{ wish.amount-wish.given }}</span>
+              <span v-else>∞</span>
             </td>
             <td>{{ wish.item }}</td>
             <td>{{ wish.specification }}</td>
