@@ -57,7 +57,7 @@
                 class="badge badge-pill badge-primary badge-custom"
                 :class="{ disabled: wish.amount-wish.given==0 }"
               >{{ wish.amount-wish.given }}</span>
-              <span v-else>∞</span>
+              <span v-else class="badge badge-pill badge-primary badge-custom">∞</span>
             </td>
             <td>{{ wish.item }}</td>
             <td>{{ wish.specification }}</td>
@@ -72,7 +72,7 @@
             <td>
               <button
                 class="btn btn-primary btn-sm btn-custom"
-                :disabled="wish.amount-wish.given==0"
+                :disabled="wish.amount-wish.given==0 || wish.amount<0"
                 @click="bookingConfirmation(wish, index)"
               >Boka</button>
             </td>
