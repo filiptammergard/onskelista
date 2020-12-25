@@ -77,8 +77,7 @@ export default {
     validWish() {
       if (
         this.wishData.item != null &&
-        this.wishData.amount != null &&
-        this.wishData.amount > 0
+        this.wishData.amount != null
       ) {
         return true;
       } else {
