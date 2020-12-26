@@ -20,7 +20,7 @@ export default new Vuex.Store({
     isLoggedIn: false,
     isAdmin: false,
     unsubscribe: null,
-    booked: false
+    booked: false,
   },
   mutations: {
     fetchWishes(state, wishes) {
@@ -48,16 +48,16 @@ export default new Vuex.Store({
       setTimeout(() => {
         state.booked = false;
       }, 300);
-    }
+    },
   },
   actions: {
     fetchWishes({ commit }) {
       const unsubscribe = db
         .collection("wishes")
         .orderBy("order")
-        .onSnapshot(querySnapshot => {
+        .onSnapshot((querySnapshot) => {
           let wishes = [];
-          querySnapshot.forEach(doc => {
+          querySnapshot.forEach((doc) => {
             wishes.push({
               id: doc.id,
               item: doc.data().item,
@@ -66,7 +66,7 @@ export default new Vuex.Store({
               link: doc.data().link,
               given: doc.data().given,
               order: doc.data().order,
-              bookingAmount: 1
+              bookingAmount: 1,
             });
           });
           commit("fetchWishes", wishes);
@@ -96,7 +96,7 @@ export default new Vuex.Store({
         .collection("bookings")
         .add({
           booking_amount: Number(wish.bookingAmount),
-          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         });
       context.commit("bookedTrue");
       //}
@@ -108,7 +108,7 @@ export default new Vuex.Store({
       db.collection("wishes")
         .orderBy("order")
         .get()
-        .then(querySnapshot => {
+        .then((querySnapshot) => {
           if (querySnapshot.docs.length) {
             db.collection("wishes")
               .add({
@@ -116,8 +116,10 @@ export default new Vuex.Store({
                 amount: Number(wish.amount),
                 specification: wish.specification,
                 link: wish.link,
-                order: querySnapshot.docs[querySnapshot.docs.length - 1].data().order + 1,
-                given: 0
+                order:
+                  querySnapshot.docs[querySnapshot.docs.length - 1].data()
+                    .order + 1,
+                given: 0,
               })
               .then(router.push({ name: "home" }));
           } else {
@@ -128,7 +130,7 @@ export default new Vuex.Store({
                 specification: wish.specification,
                 link: wish.link,
                 order: 0,
-                given: 0
+                given: 0,
               })
               .then(router.push({ name: "home" }));
           }
@@ -139,18 +141,18 @@ export default new Vuex.Store({
         .collection("wishes")
         .doc(router.currentRoute.params.id)
         .get()
-        .then(doc => {
+        .then((doc) => {
           return doc.data().given;
         });
 
-      if (Number(wish.amount) >= given) {
+      if (Number(wish.amount) >= given || Number(wish.amount) < 0) {
         db.collection("wishes")
           .doc(router.currentRoute.params.id)
           .update({
             item: wish.item,
             amount: Number(wish.amount),
             specification: wish.specification,
-            link: wish.link
+            link: wish.link,
           });
         router.push({ name: "home" });
       } else {
@@ -166,12 +168,14 @@ export default new Vuex.Store({
         .collection("wishes")
         .doc(router.currentRoute.params.id)
         .get()
-        .then(doc => {
+        .then((doc) => {
           return doc.data();
         });
       if (
         confirm(
-          'Är du säker på att du vill radera önsketipset "' + wish.item + '" från önskelistan?'
+          'Är du säker på att du vill radera önsketipset "' +
+            wish.item +
+            '" från önskelistan?'
         )
       ) {
         db.collection("wishes")
@@ -182,8 +186,8 @@ export default new Vuex.Store({
           .where("order", ">", wish.order)
           .orderBy("order")
           .get()
-          .then(querySnapshot => {
-            querySnapshot.forEach(doc => {
+          .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
               db.collection("wishes")
                 .doc(doc.id)
                 .update({ order: doc.data().order - 1 });
@@ -195,20 +199,26 @@ export default new Vuex.Store({
       db.collection("wishes")
         .orderBy("order")
         .get()
-        .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
             if (e.newIndex > e.oldIndex) {
               if (doc.data().order == e.oldIndex) {
                 db.collection("wishes")
                   .doc(doc.id)
                   .update({ order: e.newIndex });
-              } else if (doc.data().order > e.oldIndex && doc.data().order <= e.newIndex) {
+              } else if (
+                doc.data().order > e.oldIndex &&
+                doc.data().order <= e.newIndex
+              ) {
                 db.collection("wishes")
                   .doc(doc.id)
                   .update({ order: doc.data().order - 1 });
               }
             } else if (e.newIndex < e.oldIndex) {
-              if (doc.data().order < e.oldIndex && doc.data().order >= e.newIndex) {
+              if (
+                doc.data().order < e.oldIndex &&
+                doc.data().order >= e.newIndex
+              ) {
                 db.collection("wishes")
                   .doc(doc.id)
                   .update({ order: doc.data().order + 1 });
@@ -220,6 +230,6 @@ export default new Vuex.Store({
             }
           });
         });
-    }
-  }
+    },
+  },
 });
